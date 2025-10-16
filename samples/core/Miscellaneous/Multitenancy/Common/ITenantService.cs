@@ -2,11 +2,11 @@
 {
     public interface ITenantService
     {
-        string Tenant { get; }
+        int? Tenant { get; }
 
-        void SetTenant(string tenant);
+        void SetTenant(int? tenant);
 
-        string[] GetTenants();
+        int[] GetTenants();
 
         event TenantChangedEventHandler OnTenantChanged;
     }

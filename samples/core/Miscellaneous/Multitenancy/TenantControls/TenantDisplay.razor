@@ -4,10 +4,10 @@
 
 @code
 {
-    private string _tenant = null!;
+    private int? _tenant = null!;
 
     [Parameter]
-    public string TenantClass { get; set; } = string.Empty;
+    public int? TenantClass { get; set; } = null;
 
     protected override void OnInitialized()
     {

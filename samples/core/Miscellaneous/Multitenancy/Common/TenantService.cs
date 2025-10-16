@@ -5,28 +5,28 @@
     {
         public TenantService() => _tenant = GetTenants()[0];
 
-        public TenantService(string tenant) => _tenant = tenant;
+        public TenantService(int? tenant) => _tenant = tenant;
 
-        private string _tenant;
+        private int? _tenant;
 
         public event TenantChangedEventHandler OnTenantChanged = null!;
 
-        public string Tenant => _tenant;
+        public int? Tenant => _tenant;
 
-        public void SetTenant(string tenant)
+        public void SetTenant(int? tenant)
         {
             if (tenant != _tenant)
             {
                 var old = _tenant;
                 _tenant = tenant;
-                OnTenantChanged?.Invoke(this, new TenantChangedEventArgs(old, _tenant));
+                OnTenantChanged?.Invoke(this, new TenantChangedEventArgs(old, _tenant??0));
             }
         }
         
-        public string[] GetTenants() => new[]
+        public int[] GetTenants() => new[]
         {
-            "TenantA",
-            "TenantB",
+            1,
+            2,
         };
     }
 }

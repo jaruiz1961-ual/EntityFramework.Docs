@@ -2,14 +2,14 @@
 {
     public class TenantChangedEventArgs : EventArgs
     {
-        public TenantChangedEventArgs(string? oldTenant, string newTenant)
+        public TenantChangedEventArgs(int? oldTenant, int newTenant)
         {
             OldTenant = oldTenant;
             NewTenant = newTenant;
         }
 
-        public string? OldTenant { get; private set; }
+        public int? OldTenant { get; private set; }
 
-        public string NewTenant { get; private set; }
+        public int NewTenant { get; private set; }
     }
 }
